@@ -1,10 +1,9 @@
 #channelpoints - pyautolocates the channel point image and prints the location
-#V1 Trying to upload to git
 import pyautogui
-#Following three lines allow for searching of both monitors - without pyautogui only looks at left screen
-from PIL import ImageGrab
 from PIL import Image
 import pytesseract
+#Following three lines allow for searching of both monitors - without pyautogui only looks at left screen
+from PIL import ImageGrab
 from functools import partial
 ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
 
@@ -17,12 +16,9 @@ def FindBubbles():
     myScreenshot = pyautogui.screenshot(region=(pointslocation))
     myScreenshot.save(r'E:/Projects/Python/Twitch_Points/test.png')
 
-def get_text(image):
-    return pytesseract.image_to_string(image)
-
 #FindBubbles()
 img = Image.open('E:/Projects/Python/Twitch_Points/NumberTest.jpg')
-#print(pytesseract.image_to_string(img, config='--psm 6'))
+print(pytesseract.image_to_string(img, config='--psm 6'))
 #numbershow = get_text(img)
 
 '''
