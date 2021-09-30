@@ -20,7 +20,7 @@ def on_click(x, y, button, pressed):
         print("CLICKING FINISHED")
         Click_Locations.pop()
         print(Click_Locations)
-        MouseWatching()
+        #MouseWatching()
         #print(Click_Locations[0])
         # Stop listener
         return False
